@@ -27,19 +27,23 @@ fast5
 ```
 fastq
 └───date_chemistry_name
-      │    summary_file1
-      │    summary_file2
-      │    ...
-      └───fastq
-      │      ID1.fastq
-      │      ID2.fastq
-      │      ...
-      └───alignments
-             name.bam
-             name.bam.bai
-             ...
+    └───date_id_instrumentID_flowcellID_runIDfast5
+        │    summary_file1
+        │    summary_file2
+        │    ...
+        └───fastq
+        │      ID1.fastq
+        │      ID2.fastq
+        │      ...
+        └───alignments
+               name.bam
+               name.bam.bai
+               ...
 
 ```
+
+## Data Preprocessing
+* Basecalling, alignment and other data preprocessing scripts can be found in [data_preprocessing](data_preprocessing/k8s.md#Supervised)
 
 ## Environment setup
 * The installation script for a clean ubuntu server can be found in `ubuntu18_setup.sh`. Just check if you really want to install
