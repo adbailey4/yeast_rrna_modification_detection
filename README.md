@@ -3,7 +3,7 @@
 This is the top level directory for the pipelines, scripts, and environment setup for anyone who wants to
 replicate or reproduce the results from our paper.
 
-## Data Availablility
+### Data Availablility
 
 * Fast5
     * aws s3 sync s3://bailey-ares-rrna/final_data/fast5/ .
@@ -42,16 +42,19 @@ fastq
 
 ```
 
-## Data Preprocessing
-* Basecalling, alignment and other data preprocessing scripts can be found in [data_preprocessing](data_preprocessing/k8s.md#Supervised)
+### Data Preprocessing
+* Basecalling, alignment and other data preprocessing scripts can be found in [data_preprocessing](data_preprocessing/data_preprocessing.md)
 
-## Environment setup
+### Environment setup
 * The installation script for a clean ubuntu server can be found in `ubuntu18_setup.sh`. Just check if you really want to install
   all the requirements included in `ubuntu18_setup.sh`
-* `bash ubuntu18_setup.sh`
 
-## Training routine
+### Training routine
+* Fast5 and fastq prep and training scripts can be found in [training](training/training.md)
+
+### Inference pipeline
 
 
-## Inference pipeline
 
+## Running Everything End to End 
+* If you want to download all data, basecall, align, train, and perform inference on all the data go to [end_to_end](end_to_end/end_to_end.md)

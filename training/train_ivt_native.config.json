@@ -1,0 +1,104 @@
+{
+  "signal_alignment_args": {
+    "target_regions": null,
+    "track_memory_usage": false,
+    "threshold": 0.01,
+    "event_table": null,
+    "embed": false,
+    "delete_tmp": true,
+    "output_format": "full"
+  },
+  "samples": [
+    {
+      "positions_file": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/yeast_18S_25S_modified.positions",
+      "fast5_dirs": ["/data/"],
+      "bwa_reference": "/home/ubuntu/yeast_rrna_modification_detection/data_preprocessing/reference/yeast_25S_18S.fa",
+      "fofns": [],
+      "readdb": "readdb",
+      "fw_reference": null,
+      "bw_reference": null,
+      "kmers_from_reference": false,
+      "motifs": null,
+      "name": "wild_type",
+      "probability_threshold": 0.7,
+      "number_of_kmer_assignments": 10000,
+      "alignment_file": "/home/ubuntu/fastq/20210410_R941_WT_YPD/20210410_1830_MN20528_AGN282_f7dbe316/20210410_1830_MN20528_AGN282_f7dbe316.2308.sorted.bam",
+      "recursive": false,
+      "assignments_dir": null
+    },
+    {
+      "positions_file": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/yeast_18S_25S_canonical.positions",
+      "fast5_dirs": ["/data/"],
+      "bwa_reference": "/home/ubuntu/yeast_rrna_modification_detection/data_preprocessing/reference/yeast_25S_18S.fa",
+      "fofns": [],
+      "readdb": "/data/IVT/train_ivt.readdb",
+      "fw_reference": null,
+      "bw_reference": null,
+      "kmers_from_reference": false,
+      "motifs": null,
+      "name": "ivt",
+      "probability_threshold": 0.7,
+      "number_of_kmer_assignments": 10000,
+      "alignment_file": "/home/ubuntu/fastq/10142019_R941_IVT/20191014_1845_MN20528_FAL23261_9a8cb226/20191014_1845_MN20528_FAL23261_9a8cb226.2308.sorted.bam",
+      "recursive": false,
+      "assignments_dir": null
+    }
+  ],
+  "hdp_args": {
+    "grid_start": 30.0,
+    "grid_end": 180.0,
+    "grid_length": 1200,
+
+    "base_alpha": 1.0,
+    "base_beta": 1.0,
+    "base_gamma": 1.0,
+
+    "middle_alpha": 1.0,
+    "middle_beta": 1.0,
+    "middle_gamma": 1.0,
+
+    "leaf_alpha": 1.0,
+    "leaf_beta": 1.0,
+    "leaf_gamma": 1.0,
+
+    "thinning": 1000,
+    "gibbs_samples": 10000,
+    "burnin_multiplier": 32,
+    "hdp_type": "singleLevelAll16SrRNA"
+  },
+  "transitions_args": {
+    "training_bases": 30000,
+    "iterations": 2,
+    "test": false
+  },
+  "training": {
+    "transitions": false,
+    "normal_emissions": true,
+    "hdp_emissions": false,
+    "expectation_maximization": true,
+    "em_iterations": 30
+  },
+  "path_to_bin": "/root/signalAlign/bin",
+  "complement_hdp_model": null,
+  "template_hdp_model": null,
+  "complement_hmm_model": null,
+  "template_hmm_model": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/rna_r94_5mer_ACGTabc.model",
+  "job_count": 64,
+  "debug": false,
+  "two_d": false,
+  "output_dir": "/data/output/training",
+  "constraint_trim": null,
+  "diagonal_expansion": null,
+  "traceBackDiagonals": 150,
+  "filter_reads": 0,
+  "perform_kmer_event_alignment": true,
+  "overwrite": true,
+  "rna": true,
+  "ambig_model": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/small_variants.model",
+  "built_alignments": null,
+  "mod_only": true,
+  "delete_alignments": false,
+  "use_median": true,
+  "min_sd": 1,
+  "training_kmers": null
+}

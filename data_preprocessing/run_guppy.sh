@@ -1,5 +1,5 @@
-fast5="/home/ubuntu/data"
-output_dir="/home/ubuntu/fastq"
+fast5=$1
+output_dir=$2
 for model in $(ls "$fast5")
 do
   if [[ -d "$fast5/$model" ]]

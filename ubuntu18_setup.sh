@@ -56,7 +56,7 @@ python3.7 -m pip -q install setuptools cython virtualenv pytest
 # install embed
 git clone --recursive https://github.com/adbailey4/embed_fast5.git --branch bailey-dev
 cd embed_fast5
-python3.7 -m pip install -e .
+python3.7 -m pip install .
 python3.7 -m pytest
 
 # install bwa
@@ -75,4 +75,9 @@ cd ..
 python3.7 -m pip install .
 python3.7 -m pytest
 
+# install minimap2
+git clone https://github.com/lh3/minimap2
+cd minimap2 && make
 
+# install ont-fast5-api
+pip install ont-fast5-api
