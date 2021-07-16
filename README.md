@@ -42,19 +42,20 @@ fastq
 
 ```
 
-### Data Preprocessing
-* Basecalling, alignment and other data preprocessing scripts can be found in [data_preprocessing](data_preprocessing/data_preprocessing.md)
+### Basecalling
+* Basecalling scripts can be found in [basecalling](basecalling/basecalling.md)
 
 ### Environment setup
 * The installation script for a clean ubuntu server can be found in `ubuntu18_setup.sh`. Just check if you really want to install
   all the requirements included in `ubuntu18_setup.sh`
 
 ### Training routine
-* Fast5 and fastq prep and training scripts can be found in [training](training/training.md)
+* Alignment, indexing and training scripts can be found in [training](training/training.md)
 
 ### Inference pipeline
-
-
-
+* The inference pipeline script can be found [here](https://github.com/adbailey4/rrna_scripts/blob/hdp_testing/src/rrna_analysis/scripts/inference_pipeline.py).
+* There is a script that runs the pipeline on all experiments. 
+  * bash /home/ubuntu/yeast_rrna_modification_detection/inference.sh path_to_fast5s path_to_fastqs output_dir path_to_bin reference threads
+  
 ## Running Everything End to End 
 * If you want to download all data, basecall, align, train, and perform inference on all the data go to [end_to_end](end_to_end/end_to_end.md)

@@ -10,7 +10,7 @@ and running inference is CPU intensive. So, downloading fast5s and basecalling i
    bash /home/ubuntu/yeast_rrna_modification_detection/ubuntu18_setup.sh
    bash /home/ubuntu/yeast_rrna_modification_detection/install_guppy.sh
    aws s3 sync s3://bailey-ares-rrna/final_data/fast5/ /home/ubuntu/fast5
-   bash /home/ubuntu/yeast_rrna_modification_detection/data_preprocessing/run_guppy.sh /home/ubuntu/fast5 /home/ubuntu/fastq
+   bash /home/ubuntu/yeast_rrna_modification_detection/basecalling/run_guppy.sh /home/ubuntu/fast5 /home/ubuntu/fastq
    ```
-3) Once Guppy has finished, shutdown the instance, convert to a large CPU compute node like c5.24xlarge
+3) Once Guppy has finished, shutdown the instance, convert to a large CPU compute node (tested on c5.metal)
 4) bash /home/ubuntu/yeast_rrna_modification_detection/end_to_end/run_entire_pipeline.sh

@@ -79,5 +79,9 @@ python3.7 -m pytest
 git clone https://github.com/lh3/minimap2
 cd minimap2 && make
 
+# install rrna-scripts
+git clone https://github.com/adbailey4/rrna_scripts --branch hdp_testing
+cd rrna_scripts && pip install .
+
 # install ont-fast5-api
 pip install ont-fast5-api
