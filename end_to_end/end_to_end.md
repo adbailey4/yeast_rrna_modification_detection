@@ -8,7 +8,7 @@ and running inference is CPU intensive. So, downloading fast5s and basecalling i
    sudo apt-get install git
    git clone https://github.com/adbailey4/yeast_rrna_modification_detection
    bash /home/ubuntu/yeast_rrna_modification_detection/ubuntu18_setup.sh
-   bash /home/ubuntu/yeast_rrna_modification_detection/install_guppy.sh
+   bash /home/ubuntu/yeast_rrna_modification_detection/basecalling/install_guppy.sh
    aws s3 sync s3://bailey-ares-rrna/final_data/fast5/ /home/ubuntu/fast5
    bash /home/ubuntu/yeast_rrna_modification_detection/basecalling/run_guppy.sh /home/ubuntu/fast5 /home/ubuntu/fastq
    ```
