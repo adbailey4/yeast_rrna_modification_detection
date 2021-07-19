@@ -69,19 +69,35 @@ make
 cd ../..
 git clone --recursive https://github.com/UCSC-nanopore-cgl/signalAlign.git --branch bailey-dev
 cd signalAlign && mkdir -p build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=. -DCMAKE_VERBOSE_MAKEFILE=ON -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=RELEASE
+cmake .. -DCMAKE_INSTALL_PREFIX=. -DCMAKE_VERBOSE_MAKEFILE=ON -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=RELEASE
 make -j 4
 cd ..
 python3.7 -m pip install .
 python3.7 -m pytest
 
 # install minimap2
-git clone https://github.com/lh3/minimap2
+cd .. && git clone https://github.com/lh3/minimap2
 cd minimap2 && make
 
 # install rrna-scripts
-git clone https://github.com/adbailey4/rrna_scripts --branch hdp_testing
+cd .. && git clone https://github.com/adbailey4/rrna_scripts --branch hdp_testing
 cd rrna_scripts && pip install .
 
 # install ont-fast5-api
 pip install ont-fast5-api
+
+
+# install vbz_compression
+cd .. && git clone https://github.com/nanoporetech/vbz_compression.git
+cd vbz_compression
+git submodule update --init
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=Release -D ENABLE_CONAN=OFF -D ENABLE_PERF_TESTING=OFF -D ENABLE_PYTHON=OFF ..
+make -j 4
+sudo make install
+cd ../..
+
+# install deeplexicon
+git clone https://github.com/Psy-Fer/deeplexicon.git
+pip install Keras==2.2.4 Pandas PyTs==0.8.0 Scikit-learn numba==0.45.0 TensorFlow==1.13.1
