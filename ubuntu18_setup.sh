@@ -84,7 +84,7 @@ cd .. && git clone https://github.com/adbailey4/rrna_scripts --branch hdp_testin
 cd rrna_scripts && pip install .
 
 # install ont-fast5-api
-pip install ont-fast5-api
+python3.7 -m pip install ont-fast5-api
 
 
 # install vbz_compression
@@ -98,6 +98,3 @@ make -j 4
 sudo make install
 cd ../..
 
-# install deeplexicon
-git clone https://github.com/Psy-Fer/deeplexicon.git
-pip install Keras==2.2.4 Pandas PyTs==0.8.0 Scikit-learn numba==0.45.0 TensorFlow==1.13.1

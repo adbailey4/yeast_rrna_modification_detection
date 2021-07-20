@@ -57,5 +57,12 @@ fastq
 * There is a script that runs the pipeline on all experiments. 
   * bash /home/ubuntu/yeast_rrna_modification_detection/inference.sh path_to_fast5s path_to_fastqs output_dir path_to_bin reference threads
   
+### External Experiments
+* We used several datasets from `Begik, O., Lucas, M.C., Pryszcz, L.P. et al. Quantitative profiling of pseudouridylation dynamics in native RNAs with nanopore sequencing. Nat Biotechnol (2021). https://doi.org/10.1038/s41587-021-00915-6`. 
+* Our processing scripts can be found [here](external_experiments/external_experiments.md)
+
+### QC Sequencing Runs
+* We used pycoQC to QC sequencing runs. `bash sequencing_stats.sh <FASTQ_TOP_DIR> <OUTPUT_DIR>`
+
 ## Running Everything End to End 
 * If you want to download all data, basecall, align, train, and perform inference on all the data go to [end_to_end](end_to_end/end_to_end.md)

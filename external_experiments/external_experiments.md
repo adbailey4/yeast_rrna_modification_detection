@@ -126,6 +126,20 @@ bash /home/ubuntu/yeast_rrna_modification_detection/basecalling/run_guppy.sh /ho
 ```
 
 #### Demultiplex and call
-bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex.sh /home/ubuntu/mount/external_data/fast5
+```
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends autoconf wget git curl build-essential libbz2-dev zlib1g-dev liblzma-dev libeigen3-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libcurl4-openssl-dev libhdf5-dev ca-certificates python3.7-dev python3-pip python3.7-venv samtools
+python3.7 -m venv ./Deeplexicon/
+git clone https://github.com/Psy-Fer/deeplexicon.git
+source Deeplexicon/bin/activate
+python3.7 -m pip install -U pip wheel
+python3.7 -m pip install h5py Keras==2.2.4 pandas PyTs==0.8.0 Scikit-learn numba==0.45.0 TensorFlow==1.13.1
+python3.7 -m pip install llvmlite==0.32.1 h5py==2.10.0
+pip install pandas==0.25.0
+pip install numpy==1.17.0
+```
+
+
+bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq
 bash /home/ubuntu/yeast_rrna_modification_detection/inference.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq /home/ubuntu/mount/external_data/inference /home/ubuntu/src/signalAlign/bin /home/ubuntu/yeast_rrna_modification_detection/training/reference/yeast_25S_18S.fa 96
 
