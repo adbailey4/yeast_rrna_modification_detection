@@ -43,7 +43,7 @@ MinION	Cytosolic	bc2	H2O2 Input
 MinION	Cytosolic	bc3	WT Translated (F3+F4)  
 MinION	Cytosolic	bc4	H2O2 Translated (F3+F4)  
 
-RNA563572	rep2	
+RNA564572 (documented from paper as RNA563572)	rep2	
 MinION	Cytosolic	bc1	WT Input  
 MinION	Cytosolic	bc2	H2O2 Input  
 MinION	Cytosolic	bc3	WT Translated (F3+F4)  
@@ -57,12 +57,12 @@ MinION	Cytosolic	bc3	WT Input rep2 (resequencing)
 MinION	Cytosolic	bc4	H202 Input rep2 (resequencing)  
 
 ### Nutrient and Temp Strain
-RNA235629	rep1	  
+RNA235628 (documented from paper as RNA235629)	rep1	  
 MinION	Total	bc1	YEP control  
 MinION	Total	bc2	YEP cold stress  
 MinION	Total	bc4	YEP heatshock stress  
-  
-RNA574356	rep2	  
+
+RNA524356 (documented from paper as RNA574356)	rep2	  
 MinION	Total	bc1	YEP control  
 MinION	Total	bc2	YEP cold stress  
 MinION	Total	bc4	YEP heatshock stress  
@@ -130,16 +130,23 @@ bash /home/ubuntu/yeast_rrna_modification_detection/basecalling/run_guppy.sh /ho
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends autoconf wget git curl build-essential libbz2-dev zlib1g-dev liblzma-dev libeigen3-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libcurl4-openssl-dev libhdf5-dev ca-certificates python3.7-dev python3-pip python3.7-venv samtools
 python3.7 -m venv ./Deeplexicon/
-git clone https://github.com/Psy-Fer/deeplexicon.git
 source Deeplexicon/bin/activate
+mkdir -p src && cd src && git clone https://github.com/Psy-Fer/deeplexicon.git && cd ..
 python3.7 -m pip install -U pip wheel
 python3.7 -m pip install h5py Keras==2.2.4 pandas PyTs==0.8.0 Scikit-learn numba==0.45.0 TensorFlow==1.13.1
 python3.7 -m pip install llvmlite==0.32.1 h5py==2.10.0
 pip install pandas==0.25.0
 pip install numpy==1.17.0
+screen -S run
+source Deeplexicon/bin/activate
 ```
 
+* Demultiplexing all the data would take weeks to run so I split up each experiment and split only as many fast5s as I needed.
+bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA814001 20
+bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA442567 20
+bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA564572 20
+bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA524356 20
+bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA345944 20
 
-bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq
-bash /home/ubuntu/yeast_rrna_modification_detection/inference.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq /home/ubuntu/mount/external_data/inference /home/ubuntu/src/signalAlign/bin /home/ubuntu/yeast_rrna_modification_detection/training/reference/yeast_25S_18S.fa 96
+bash /home/ubuntu/yeast_rrna_modification_detection/inference.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq /home/ubuntu/mount/external_data/inference/ivt_vs_wt /home/ubuntu/src/signalAlign/bin /home/ubuntu/yeast_rrna_modification_detection/training/reference/yeast_25S_18S.fa 96
 
