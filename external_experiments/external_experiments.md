@@ -142,11 +142,13 @@ source Deeplexicon/bin/activate
 ```
 
 * Demultiplexing all the data would take weeks to run so I split up each experiment and split only as many fast5s as I needed.
-bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA814001 20
-bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA442567 20
-bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA564572 20
-bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA524356 20
-bash /home/ubuntu/mount/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA345944 20
+bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA814001 20
+bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA442567 20
+bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA564572 20
+bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA524356 20
+bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA345944 20
+
+bash /home/ubuntu/yeast_rrna_modification_detection/external_experiments/demultiplex_sample.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq RNA927416 20
 
 bash /home/ubuntu/yeast_rrna_modification_detection/inference.sh /home/ubuntu/mount/external_data/fast5 /home/ubuntu/mount/external_data/fastq /home/ubuntu/mount/external_data/inference/ivt_vs_wt /home/ubuntu/src/signalAlign/bin /home/ubuntu/yeast_rrna_modification_detection/training/reference/yeast_25S_18S.fa 96
 

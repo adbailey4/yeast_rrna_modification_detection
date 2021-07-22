@@ -1,6 +1,6 @@
+threads=$6
 reference=$5
 path_to_bin=$4
-threads=$6
 output_dir=$3
 fastq=$2
 fast5=$1
