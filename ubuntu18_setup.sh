@@ -17,7 +17,7 @@ wget https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.sh --no-check-certi
 sh cmake-3.17.0-Linux-x86_64.sh --skip-license
 
 # install htslib
-cd .. && mkdir -p htslib && cd htslib
+cd ..
 wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2 --no-check-certificate
 tar -vxjf htslib-1.9.tar.bz2
 rm htslib-1.9.tar.bz2
@@ -27,7 +27,7 @@ make
 sudo make install
 
 # boost install
-cd .. && mkdir -p boost && cd boost
+cd ..
 wget -O boost_1_69_0.tar.gz https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/download --no-check-certificate
 tar -xzf boost_1_69_0.tar.gz >/dev/null
 rm boost_1_69_0.tar.gz
@@ -37,7 +37,7 @@ cd boost_1_69_0
 sudo ./b2 -d0 install
 
 # hdf5 install
-cd .. && mkdir -p hdf5 && cd hdf5
+cd ..
 wget -q https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.4/src/hdf5-1.10.4.tar.gz
 tar -xzf hdf5-1.10.4.tar.gz
 cd hdf5-1.10.4
@@ -60,13 +60,13 @@ python3.7 -m pip install .
 python3.7 -m pytest
 
 # install bwa
-cd .. && mkdir -p bwa && cd bwa
+cd ..
 git clone https://github.com/lh3/bwa.git
 cd bwa
 make
 
 # install signalAlign
-cd ../..
+cd ..
 git clone --recursive https://github.com/UCSC-nanopore-cgl/signalAlign.git --branch bailey-dev
 cd signalAlign && mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=. -DCMAKE_VERBOSE_MAKEFILE=ON -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=RELEASE
