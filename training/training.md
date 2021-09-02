@@ -2,16 +2,11 @@
 
 ### Preprocessing
 
-##### Alignment
+##### Alignment and Indexing
 * Make sure minimap and samtools are in your PATH (`source load_environment.sh`)
-* Align fastqs to reference and filter alignment files
-  * `bash generate_alignments.sh path_to_fastq_dir path_to_reference`
-
-##### Index
-
-* In order to signalAlign to find the corresponding fast5s and fastqs you have to split and index the fast5 files.
-* Simple script to split and index
-  * `bash create_index.sh fastq_dir fast5_dir`
+* In order to signalAlign to find the corresponding fast5s and fastqs you have to split and index the fast5 files. 
+You also need to align fastqs to reference and filter alignment files.
+  * `bash /home/ubuntu/yeast_rrna_modification_detection/training/prep_ivt_and_native_data.sh /home/ubuntu/fast5 /home/ubuntu/fastq /home/ubuntu/yeast_rrna_modification_detection/training/reference/yeast_25S_18S.fa`
   
 ### IVT vs Wild Type Training
 
