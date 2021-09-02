@@ -21,7 +21,8 @@ do
 #        head -20000 $exp_fastq > "$fastq/$model/$experiment_dir/$experiment_dir.5000.fastq"
 #        inference_pipeline.py --reference $reference --path_to_bin $path_to_bin --threads $threads \
 #          --fastq "$fastq/$model/$experiment_dir/$experiment_dir.5000.fastq" --fast5 $fast5_path --output_dir $output_exp --name $model
-      elif [ "$model" == "RNA814001" ] || [ "$model" == "RNA345944" ] || [ "$model" == "RNA442567" ] || [ "$model" == "RNA927416" ] || [ "$model" == "RNA639991" ] || [ "$model" == "RNA564572" ] || [ "$model" == "RNA873248" ] || [ "$model" == "RNA235628" ] || [ "$model" == "RNA524356" ] || [ "$model" == "RNA325982" ] || [ "$model" == "RNA113124_new" ]
+#      elif [ "$model" == "RNA814001" ] || [ "$model" == "RNA345944" ] || [ "$model" == "RNA442567" ] || [ "$model" == "RNA927416" ] || [ "$model" == "RNA639991" ] || [ "$model" == "RNA564572" ] || [ "$model" == "RNA873248" ] || [ "$model" == "RNA235628" ] || [ "$model" == "RNA524356" ] || [ "$model" == "RNA325982" ] || [ "$model" == "RNA113124_new" ]
+      elif [ "$model" == "RNA927416" ]
       then
         for barcode in "bc_1" "bc_2" "bc_3" "bc_4"; do
           if [ -f "$fastq/$model/$experiment_dir/$experiment_dir.$barcode.fastq" ]; then
@@ -36,9 +37,10 @@ do
           fi
         done
       else
+#      elif [ "$model" == "spp382_YPD_20210720" ]; then
         echo "Flongle $exp_fastq"
-#        inference_pipeline.py --reference $reference --path_to_bin $path_to_bin --threads $threads \
-#          --fastq $exp_fastq --fast5 $fast5_path --output_dir $output_exp --name $model
+        inference_pipeline.py --reference $reference --path_to_bin $path_to_bin --threads $threads \
+          --fastq $exp_fastq --fast5 $fast5_path --output_dir $output_exp --name $model
       fi
     done
   fi

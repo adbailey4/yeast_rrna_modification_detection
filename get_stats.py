@@ -11,13 +11,13 @@
 from argparse import ArgumentParser
 import os
 from pathlib import Path
-from subprocess import check_call
+from subprocess import check_call, Popen, PIPE
 
 import pandas as pd
 
 from py3helpers.utils import list_dir, time_it
 from pycoQC.pycoQC import pycoQC
-
+import pysam
 
 def parse_args():
     parser = ArgumentParser(description=__doc__)
@@ -50,6 +50,10 @@ def get_basic_qc_stats(seq_summary, bam):
     return_dict["basecall_bases_number"] = summary["All Reads"]["basecall"]["bases_number"]
     return_dict["alignment_reads_number"] = summary["All Reads"]["alignment"]["reads_number"]
     return_dict["alignment_bases_number"] = summary["All Reads"]["alignment"]["bases_number"]
+    with pysam.AlignmentFile(bam, "rb") as samfile:
+        return_dict["full_length_18S"] = samfile.count('RDN18-1', 1, 15)
+        return_dict["full_length_25S"] = samfile.count('RDN25-1', 1, 15)
+
     return return_dict
 
 
@@ -108,7 +112,7 @@ def main():
 
     all_data = pd.DataFrame(all_stats).T
     all_data[["name", "run_id", "run_duration", "active_channels", "basecall_reads_number", "basecall_bases_number",
-              "alignment_reads_number", "alignment_bases_number"]].to_csv(out_path, index=False)
+              "alignment_reads_number", "alignment_bases_number", "full_length_18S", "full_length_25S"]].to_csv(out_path, index=False)
 
 
 if __name__ == '__main__':
