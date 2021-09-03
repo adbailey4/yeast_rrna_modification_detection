@@ -5,13 +5,13 @@
   "samples": [
     {
       "name": "ivt",
-      "variant_csv": "/Users/andrewbailey/CLionProjects/personal/projects/ares_rRNA/sa_training/supervised/ivt_native/em_compare_remote/tsvs/test.csv",
-      "positions_file": "/Users/andrewbailey/CLionProjects/yeast_rrna_modification_detection/training/small_5mer/yeast_18S_25S_canonical.positions"
+      "variant_csv": "/home/ubuntu/testing/tempFiles_alignment/ivt.csv",
+      "positions_file": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/yeast_18S_25S_canonical.positions"
     },
     {
-      "name": "native",
-      "variant_csv": "/Users/andrewbailey/CLionProjects/personal/projects/ares_rRNA/sa_training/supervised/ivt_native/em_compare_remote/tsvs/test.csv",
-      "positions_file": "/Users/andrewbailey/CLionProjects/yeast_rrna_modification_detection/training/small_5mer/yeast_18S_25S_modified.positions"
+      "name": "wild_type",
+      "variant_csv": "/home/ubuntu/testing/tempFiles_alignment/wild_type.csv",
+      "positions_file": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/yeast_18S_25S_modified.positions"
     }
   ]
 }

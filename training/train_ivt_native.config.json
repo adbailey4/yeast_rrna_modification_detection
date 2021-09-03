@@ -12,7 +12,7 @@
     {
       "positions_file": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/yeast_18S_25S_modified.positions",
       "fast5_dirs": ["/home/ubuntu/"],
-      "bwa_reference": "/home/ubuntu/yeast_rrna_modification_detection/data_preprocessing/reference/yeast_25S_18S.fa",
+      "bwa_reference": "/home/ubuntu/yeast_rrna_modification_detection/training/reference/yeast_25S_18S.fa",
       "fofns": [],
       "readdb": "/home/ubuntu/fastq/20210410_R941_WT_YPD/20210410_1830_MN20528_AGN282_f7dbe316/20210410_1830_MN20528_AGN282_f7dbe316.training.readdb",
       "fw_reference": null,
@@ -29,7 +29,7 @@
     {
       "positions_file": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/yeast_18S_25S_canonical.positions",
       "fast5_dirs": ["/home/ubuntu/"],
-      "bwa_reference": "/home/ubuntu/yeast_rrna_modification_detection/data_preprocessing/reference/yeast_25S_18S.fa",
+      "bwa_reference": "/home/ubuntu/yeast_rrna_modification_detection/training/reference/yeast_25S_18S.fa",
       "fofns": [],
       "readdb": "/home/ubuntu/fastq/10142019_R941_IVT/20191014_1845_MN20528_FAL23261_9a8cb226/20191014_1845_MN20528_FAL23261_9a8cb226.training.readdb",
       "fw_reference": null,
