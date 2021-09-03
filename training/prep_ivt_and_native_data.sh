@@ -2,7 +2,7 @@ fast5=$1
 fastq=$2
 reference=$3
 
-ivt="10142019_R941_IVT"
+ivt="20191014_R941_IVT"
 ivt_id="20191014_1845_MN20528_FAL23261_9a8cb226"
 wt="20210410_R941_WT_YPD"
 wt_id="20210410_1830_MN20528_AGN282_f7dbe316"
@@ -36,17 +36,18 @@ samtools index $exp.2308.25S.sorted.bam
 samtools index $exp.2308.18S.sorted.bam
 samtools view $exp.2308.18S.sorted.bam | awk '{print $1}' > $exp.2308.18S.read_ids.txt
 samtools view $exp.2308.25S.sorted.bam | awk '{print $1}' > $exp.2308.25S.read_ids.txt
-grep -f $exp.2308.18S.read_ids.txt "$exp.fastq".index.readdb > $exp.18S.readdb
-grep -f $exp.2308.25S.read_ids.txt "$exp.fastq".index.readdb > $exp.25S.readdb
-head -500 $exp.18S.readdb > $exp.training.readdb
-head -500 $exp.25S.readdb >> $exp.training.readdb
-tail -n +501 $exp.18S.readdb > $exp.inference.readdb
-tail -n +501 $exp.25S.readdb >> $exp.inference.readdb
 
 ## Split and index fast5s
 multi_to_single_fast5 -t 16 --input_path "$fast5/$name/$id/fast5" --save_path "$fast5/$name/$id/split_fast5"
 embed_main index -d "$fast5/$name/$id/split_fast5" "$exp.fastq"
 #
+grep -f $exp.2308.18S.read_ids.txt "$exp.fastq".index.readdb > $exp.18S.readdb
+grep -f $exp.2308.25S.read_ids.txt "$exp.fastq".index.readdb > $exp.25S.readdb
+head -500 $exp.18S.readdb > $exp.training.readdb
+head -500 $exp.25S.readdb >> $exp.training.readdb
+tail -n +501 $exp.18S.readdb | head -500 > $exp.inference.readdb
+tail -n +501 $exp.25S.readdb | head -500 >> $exp.inference.readdb
+
 }
 
 main
