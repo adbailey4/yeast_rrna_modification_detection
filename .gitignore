@@ -1,2 +1,5 @@
 notebooks/modification_calls
 .idea/
+notebooks/.ipynb_checkpoints
+notebooks/figures/
+external_experiments/
