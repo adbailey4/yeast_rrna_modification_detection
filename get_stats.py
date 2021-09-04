@@ -51,8 +51,8 @@ def get_basic_qc_stats(seq_summary, bam):
     return_dict["alignment_reads_number"] = summary["All Reads"]["alignment"]["reads_number"]
     return_dict["alignment_bases_number"] = summary["All Reads"]["alignment"]["bases_number"]
     with pysam.AlignmentFile(bam, "rb") as samfile:
-        return_dict["full_length_18S"] = samfile.count('RDN18-1', 1, 15)
-        return_dict["full_length_25S"] = samfile.count('RDN25-1', 1, 15)
+        return_dict["n_reads_all_mods_covered_18S"] = samfile.count('RDN18-1', 1, 25)
+        return_dict["n_reads_all_mods_covered_25S"] = samfile.count('RDN25-1', 1, 600)
 
     return return_dict
 
@@ -112,7 +112,7 @@ def main():
 
     all_data = pd.DataFrame(all_stats).T
     all_data[["name", "run_id", "run_duration", "active_channels", "basecall_reads_number", "basecall_bases_number",
-              "alignment_reads_number", "alignment_bases_number", "full_length_18S", "full_length_25S"]].to_csv(out_path, index=False)
+              "alignment_reads_number", "alignment_bases_number", "n_reads_all_mods_covered_18S", "n_reads_all_mods_covered_25S"]].to_csv(out_path, index=False)
 
 
 if __name__ == '__main__':
