@@ -42,27 +42,41 @@ fastq
 
 ```
 
+* Modification calls
+  * `aws s3 sync s3://bailey-yeast-rrna-data/modification_calls/ .`
+  
+
 ### Basecalling
+
 * Basecalling scripts can be found in [basecalling](basecalling/basecalling.md)
 
 ### Environment setup
+
 * The installation script for a clean ubuntu server can be found in `ubuntu18_setup.sh`. Just check if you really want to install
   all the requirements included in `ubuntu18_setup.sh`
 
 ### Training routine
+
 * Alignment, indexing and training scripts can be found in [training](training/training.md)
 
 ### Inference pipeline
+
 * The inference pipeline script can be found [here](https://github.com/adbailey4/rrna_scripts/blob/hdp_testing/src/rrna_analysis/scripts/inference_pipeline.py).
 * There is a script that runs the pipeline on all experiments. 
   * bash /home/ubuntu/yeast_rrna_modification_detection/inference.sh path_to_fast5s path_to_fastqs output_dir path_to_bin reference threads
   
-### External Experiments
-* We used several datasets from `Begik, O., Lucas, M.C., Pryszcz, L.P. et al. Quantitative profiling of pseudouridylation dynamics in native RNAs with nanopore sequencing. Nat Biotechnol (2021). https://doi.org/10.1038/s41587-021-00915-6`. 
-* Our processing scripts can be found [here](external_experiments/external_experiments.md)
+[comment]: <> (### External Experiments)
+[comment]: <> (* We used several datasets from `Begik, O., Lucas, M.C., Pryszcz, L.P. et al. Quantitative profiling of pseudouridylation dynamics in native RNAs with nanopore sequencing. Nat Biotechnol &#40;2021&#41;. https://doi.org/10.1038/s41587-021-00915-6`. )
+[comment]: <> (* Our processing scripts can be found [here]&#40;external_experiments/external_experiments.md&#41;)
 
 ### QC Sequencing Runs
+
 * We used pycoQC to QC sequencing runs. `bash sequencing_stats.sh <FASTQ_TOP_DIR> <OUTPUT_DIR>`
 
+### Figures
+
+* Jupyter notebooks for figures can be found in [notebooks](notebooks/notebooks.md)
+
 ## Running Everything End to End 
+
 * If you want to download all data, basecall, align, train, and perform inference on all the data go to [end_to_end](end_to_end/end_to_end.md)
