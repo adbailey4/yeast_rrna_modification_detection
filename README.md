@@ -6,7 +6,7 @@ replicate or reproduce the results from our paper.
 ### Data Availablility
 
 * Fast5
-    * aws s3 sync s3://bailey-ares-rrna/final_data/fast5/ .
+    * `aws s3 sync s3://bailey-ares-rrna/final_data/fast5/ .`
     * Fast5s are organized into tar.gz files with the following directory structure
 ```
 fast5
@@ -22,7 +22,7 @@ fast5
 ```
 
 * Fastq
-    * aws s3 sync s3://bailey-ares-rrna/final_data/fastq/ .
+    * `aws s3 sync s3://bailey-ares-rrna/final_data/fastq/ .`
     * Fastqs are organized into tar.gz files with the following directory structure
 ```
 fastq
