@@ -6,8 +6,23 @@
 * Install read_clustering
 
 
+* Experiment kmer distribution plotting
+1) Download and untar signalaligned output files for wild type and prp43
+  * `aws s3 sync s3://bailey-yeast-rrna-data/knockout_events/ experiment_kmer_distributions`
+2) Untar
+* `cd experiment_kmer_distributions && tar -xzf kmer_events.tar.gz && rm kmer_events.tar.gz`
+
+1) s3://bailey-yeast-rrna-data/knockout_events/kmer_events.tar.gz
+
+* Event clustering
+1) Download and untar signalaligned output files for wild type and prp43 
+   * `aws s3 sync s3://bailey-yeast-rrna-data/signalalign_events/ event_clustering`
+2) Untar 
+  * `cd event_clustering && tar -xzf 20210410_R941_WT_YPD.tar.gz && rm 20210410_R941_WT_YPD.tar.gz && tar -xzf 20210619_R941_prp43.tar.gz && rm 20210619_R941_prp43.tar.gz`
+
+
 ### Tombo
-* Note: I do not provide install scripts to get the either the event clustering notebook or tombo notebook to work because 
+* Note: I do not provide install scripts for tombo notebook because 
 it has separate dependencies which are not required for our pipeline and was only used for validation. 
 * Dependencies
   * Tombo
@@ -17,7 +32,4 @@ it has separate dependencies which are not required for our pipeline and was onl
   * pandas
   * sklearn
   * scipy
-
-* Download and untar tombo processed fast5 files for event clustering figure 
-    * `aws s3 sync s3://bailey-yeast-rrna-data/tombo/ event_clustering`
-    * `cd event_clustering && tar -xzf prp43_tombo_reads.tar.gz && rm prp43_tombo_reads.tar.gz && tar -xzf wild_type_tombo_reads.tar.gz && rm wild_type_tombo_reads.tar.gz`
+  
