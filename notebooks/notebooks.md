@@ -21,7 +21,7 @@ cd read_clustering && pip install .
 1) Download and untar signalaligned output files for wild type and prp43 
    * `aws s3 sync s3://bailey-yeast-rrna-data/signalalign_events/ event_clustering`
 2) Untar 
-  * `cd event_clustering && tar -xzf 20210410_R941_WT_YPD.tar.gz && rm 20210410_R941_WT_YPD.tar.gz && tar -xzf 20210619_R941_prp43.tar.gz && rm 20210619_R941_prp43.tar.gz`
+   * `cd event_clustering && tar -xzf 20210410_R941_WT_YPD.tar.gz && rm 20210410_R941_WT_YPD.tar.gz && tar -xzf 20210619_R941_prp43.tar.gz && rm 20210619_R941_prp43.tar.gz`
 
 
 ### Tombo
