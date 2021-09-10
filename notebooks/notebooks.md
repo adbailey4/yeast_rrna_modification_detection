@@ -1,5 +1,5 @@
 # Data analysis and plotting scripts
-Note: You need at least 10GB of disk space to run everything here.
+Note: You need at least 10GB of disk space to run everything here and all notebooks were ran from this file's current directory.
 
 ### Download modification call files
 `aws s3 sync s3://bailey-yeast-rrna-data/modification_calls/ /home/ubuntu/yeast_rrna_modification_detection/notebooks/modification_calls`
