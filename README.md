@@ -43,7 +43,7 @@ fastq
 ```
 
 * Modification calls
-  * `aws s3 sync s3://bailey-yeast-rrna-data/modification_calls/ .`
+  * `aws s3 sync s3://bailey-yeast-rrna-data/modification_calls/ notebooks/modification_calls`
   
 
 ### Basecalling
@@ -59,15 +59,17 @@ fastq
 
 * Alignment, indexing and training scripts can be found in [training](training/training.md)
 
+### Testing Pipeline
+
+* Testing scripts can be found in [testing](testing/testing.md)
+
+
 ### Inference pipeline
 
-* The inference pipeline script can be found [here](https://github.com/adbailey4/rrna_scripts/blob/hdp_testing/src/rrna_analysis/scripts/inference_pipeline.py).
+* The inference pipeline script can be found [here](https://github.com/adbailey4/rrna_scripts/blob/v1.0.0/src/rrna_analysis/scripts/inference_pipeline.py).
 * There is a script that runs the pipeline on all experiments. 
   * bash /home/ubuntu/yeast_rrna_modification_detection/inference.sh path_to_fast5s path_to_fastqs output_dir path_to_bin reference threads
-  
-[comment]: <> (### External Experiments)
-[comment]: <> (* We used several datasets from `Begik, O., Lucas, M.C., Pryszcz, L.P. et al. Quantitative profiling of pseudouridylation dynamics in native RNAs with nanopore sequencing. Nat Biotechnol &#40;2021&#41;. https://doi.org/10.1038/s41587-021-00915-6`. )
-[comment]: <> (* Our processing scripts can be found [here]&#40;external_experiments/external_experiments.md&#41;)
+
 
 ### QC Sequencing Runs
 
