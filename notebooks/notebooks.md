@@ -1,18 +1,17 @@
 # Data analysis and plotting scripts
 
-* Download modification call files
+### Download modification call files
   * `aws s3 sync s3://bailey-yeast-rrna-data/modification_calls/ /home/ubuntu/yeast_rrna_modification_detection/notebooks/modification_calls`
 
-* Install read_clustering
+### Install read_clustering
 
 
 * Experiment kmer distribution plotting
 1) Download and untar signalaligned output files for wild type and prp43
   * `aws s3 sync s3://bailey-yeast-rrna-data/knockout_events/ experiment_kmer_distributions`
 2) Untar
-* `cd experiment_kmer_distributions && tar -xzf kmer_events.tar.gz && rm kmer_events.tar.gz`
+ * `cd experiment_kmer_distributions && tar -xzf kmer_events.tar.gz && rm kmer_events.tar.gz`
 
-1) s3://bailey-yeast-rrna-data/knockout_events/kmer_events.tar.gz
 
 * Event clustering
 1) Download and untar signalaligned output files for wild type and prp43 
