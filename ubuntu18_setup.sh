@@ -54,7 +54,7 @@ python3.7 -m pip install --upgrade pip
 python3.7 -m pip -q install setuptools cython virtualenv pytest
 
 # install embed
-git clone --recursive https://github.com/adbailey4/embed_fast5.git --branch bailey-dev
+git clone -b 1.0.0 --recursive https://github.com/adbailey4/embed_fast5.git
 cd embed_fast5
 python3.7 -m pip install .
 python3.7 -m pytest
@@ -67,7 +67,7 @@ make
 
 # install signalAlign
 cd ..
-git clone --recursive https://github.com/UCSC-nanopore-cgl/signalAlign.git --branch bailey-dev
+git clone -b v1.0.0 --recursive https://github.com/UCSC-nanopore-cgl/signalAlign.git
 cd signalAlign && mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=. -DCMAKE_VERBOSE_MAKEFILE=ON -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=RELEASE
 make -j 4
@@ -80,7 +80,7 @@ cd .. && git clone https://github.com/lh3/minimap2
 cd minimap2 && make
 
 # install rrna-scripts
-cd .. && git clone https://github.com/adbailey4/rrna_scripts --branch hdp_testing
+cd .. && git clone -b v1.0.0 https://github.com/adbailey4/rrna_scripts
 cd rrna_scripts && pip install .
 
 # install ont-fast5-api

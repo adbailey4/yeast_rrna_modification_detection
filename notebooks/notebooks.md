@@ -4,9 +4,10 @@
   * `aws s3 sync s3://bailey-yeast-rrna-data/modification_calls/ /home/ubuntu/yeast_rrna_modification_detection/notebooks/modification_calls`
 
 ### Install read_clustering
+  * 'git clone -b v1.0.0 https://github.com/adbailey4/read_clustering'
+  * `cd read_clustering && pip install .`
 
-
-* Experiment kmer distribution plotting
+### Experiment kmer distribution plotting
 1) Download and untar signalaligned output files for wild type and prp43
   * `aws s3 sync s3://bailey-yeast-rrna-data/knockout_events/ experiment_kmer_distributions`
 2) Untar
