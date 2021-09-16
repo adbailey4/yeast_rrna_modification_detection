@@ -15,7 +15,7 @@ do
       fast5_path="$fast5/$model/$experiment_dir/fast5"
       exp_fastq="$fastq/$model/$experiment_dir/$experiment_dir.fastq"
 
-      if [ "$model" == "06102019_R941_CBF5GAL" ] || [ "$model" == "06112019_R941_CBF5GLU" ] || [ "$model" == "061719_R941_NOP58GAL" ] || [ "$model" == "06192019_R941_NOP58GLU" ] || [ "$model" == "10142019_R941_IVT" ]
+      if [ "$model" == "20190610_R941_CBF5GAL" ] || [ "$model" == "20190611_R941_CBF5GLU" ] || [ "$model" == "20190617_R941_NOP58GAL" ] || [ "$model" == "20190619_R941_NOP58GLU" ] || [ "$model" == "20191014_R941_IVT" ]
       then
         echo "Large Unbarcoded MINION $exp_fastq"
         head -40000 $exp_fastq > "$fastq/$model/$experiment_dir/$experiment_dir.10000.fastq"
