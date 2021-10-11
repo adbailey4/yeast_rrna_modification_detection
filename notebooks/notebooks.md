@@ -22,7 +22,7 @@ cd read_clustering && pip install .
    * `aws s3 sync s3://bailey-yeast-rrna-data/signalalign_events/ event_clustering`
 2) Untar 
    * `cd event_clustering && tar -xzf 20210619_R941_prp43.tar.gz && rm 20210619_R941_prp43.tar.gz`
-
+     20210527_R941_Dbp3d_YPD.tar.gz
 
 ### Tombo
 * Note: I do not provide install scripts for tombo notebook because 
