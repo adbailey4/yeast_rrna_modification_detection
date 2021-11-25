@@ -73,7 +73,7 @@ fastq
 
 ### QC Sequencing Runs
 
-* We used pycoQC to QC sequencing runs. `bash sequencing_stats.sh <FASTQ_TOP_DIR> <OUTPUT_DIR>`
+* We used pycoQC to QC sequencing runs. `python3.7 get_stats.py --fastq <FASTQ_TOP_DIR> --output_dir <OUTPUT_DIR> --reference <REFERENCE> -t <THREADS>>`
 
 ### Figures
 
