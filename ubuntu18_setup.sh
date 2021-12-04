@@ -5,7 +5,7 @@ export PATH="$PATH:$cwd/src/cmake/bin"
 
 # ubuntu install
 sudo apt-get update
-sudo apt-get install -y --no-install-recommends autoconf wget git curl build-essential libbz2-dev zlib1g-dev liblzma-dev libeigen3-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libcurl4-openssl-dev ca-certificates python3.7-dev python3-pip python3.7-venv samtools
+sudo apt-get install -y --no-install-recommends autoconf wget git curl build-essential libbz2-dev libzstd-dev zlib1g-dev liblzma-dev libeigen3-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libcurl4-openssl-dev ca-certificates python3.7-dev python3-pip python3.7-venv samtools
 
 # create src dir
 mkdir -p src
@@ -61,7 +61,7 @@ python3.7 -m pytest
 
 # install bwa
 cd ..
-git clone https://github.com/lh3/bwa.git
+git clone -b 0.7.17 https://github.com/lh3/bwa.git
 cd bwa
 make
 
@@ -76,7 +76,7 @@ python3.7 -m pip install .
 python3.7 -m pytest
 
 # install minimap2
-cd .. && git clone https://github.com/lh3/minimap2
+cd .. && git clone -b 2.23 https://github.com/lh3/minimap2
 cd minimap2 && make
 
 # install rrna-scripts
@@ -89,7 +89,7 @@ python3.7 -m pip install ont-fast5-api
 
 # install vbz_compression
 cd .. && git clone https://github.com/nanoporetech/vbz_compression.git
-cd vbz_compression
+cd vbz_compression && git checkout v1.0.1
 git submodule update --init
 mkdir build
 cd build
