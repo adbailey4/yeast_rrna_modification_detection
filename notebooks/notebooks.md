@@ -1,8 +1,8 @@
 # Data analysis and plotting scripts
 Note: You need at least 10GB of disk space to run everything here and all notebooks were ran from this file's current directory.
 
-### Download modification call files
-`aws s3 sync s3://bailey-yeast-rrna-data/modification_calls/ /home/ubuntu/yeast_rrna_modification_detection/notebooks/modification_calls`
+### Download modification call files from Gene Expression Omnibus (GEO) under accession number GSE186634 into `yeast_rrna_modification_detection/notebooks/modification_calls`
+
 
 ### Install read_clustering
 ```
@@ -25,7 +25,7 @@ cd read_clustering && pip install .
      20210527_R941_Dbp3d_YPD.tar.gz
 
 ### Tombo
-* Note: I do not provide install scripts for tombo notebook because 
+* Note: I do not provide install scripts for the tombo notebook because 
 it has separate dependencies which are not required for our pipeline and was only used for validation. 
 * Dependencies
   * Tombo

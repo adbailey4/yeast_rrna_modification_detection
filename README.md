@@ -1,13 +1,18 @@
 # Single Molecule Modification Tracking of Saccharomyces Cerevisiae 18S and 25S Ribosomal RNA using Nanopore Sequencing
 
+[comment]: <> (TODO link biorxiv paper)
+[comment]: <> (TODO link data when public)
+[comment]: <> (TODO make docker image for inference step)
+
 This is the top level directory for the pipelines, scripts, and environment setup for anyone who wants to
-replicate or reproduce the results from our paper.
+replicate or reproduce the results from our paper, Single-molecule modification profiling of Saccharomyces cerevisiae ribosomal RNA reveals subsets of alternatively modified ribosomes.
 
 ### Data Availablility
 
 * Fast5
-    * `aws s3 sync s3://bailey-ares-rrna/final_data/fast5/ .`
-    * Fast5s are organized into tar.gz files with the following directory structure
+  * Fast5s can be found at the European Nucleotide Archive (ENA) under accession number PRJEB48183
+  * Fast5s are organized into tar.gz files with the following directory structure
+
 ```
 fast5
 └───date_chemistry_name
@@ -22,30 +27,11 @@ fast5
 ```
 
 * Fastq
-    * `aws s3 sync s3://bailey-ares-rrna/final_data/fastq/ .`
-    * Fastqs are organized into tar.gz files with the following directory structure
-```
-fastq
-└───date_chemistry_name
-    └───date_id_instrumentID_flowcellID_runIDfast5
-        │    summary_file1
-        │    summary_file2
-        │    ...
-        └───fastq
-        │      ID1.fastq
-        │      ID2.fastq
-        │      ...
-        └───alignments
-               name.bam
-               name.bam.bai
-               ...
-
-```
-
-* Modification calls
-  * `aws s3 sync s3://bailey-yeast-rrna-data/modification_calls/ notebooks/modification_calls`
+  * Fastqs can be found at the Gene Expression Omnibus (GEO) under accession number GSE186634
   
-
+* Modification calls
+  * Modification calls can be found at the Gene Expression Omnibus (GEO) under accession number GSE186634
+  
 ### Basecalling
 
 * Basecalling scripts can be found in [basecalling](basecalling/basecalling.md)
