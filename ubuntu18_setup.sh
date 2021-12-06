@@ -61,12 +61,12 @@ python3.7 -m pytest
 
 # install bwa
 cd ..
-git clone -b 0.7.17 https://github.com/lh3/bwa.git
+git clone -b v0.7.17 https://github.com/lh3/bwa.git
 cd bwa
 make
 
 # install minimap2
-cd .. && git clone -b 2.23 https://github.com/lh3/minimap2
+cd .. && git clone -b v2.23 https://github.com/lh3/minimap2
 cd minimap2 && make
 
 # install rrna-scripts
@@ -86,11 +86,10 @@ cd build
 cmake -D CMAKE_BUILD_TYPE=Release -D ENABLE_CONAN=OFF -D ENABLE_PERF_TESTING=OFF -D ENABLE_PYTHON=OFF ..
 make -j 4
 sudo make install
-cd ../../..
 
 
 # install signalAlign
-cd ..
+cd ../..
 git clone -b v1.0.0 --recursive https://github.com/UCSC-nanopore-cgl/signalAlign.git
 cd signalAlign && mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=. -DCMAKE_VERBOSE_MAKEFILE=ON -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=RELEASE
@@ -98,4 +97,5 @@ make -j 4
 cd ..
 python3.7 -m pip install .
 python3.7 -m pytest
+cd ../../
 
