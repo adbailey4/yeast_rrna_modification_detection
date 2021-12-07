@@ -2,11 +2,14 @@
 * The overall pipeline has two different computational requirements. Running Guppy is GPU intensive while training the model
 and running inference is CPU intensive. So, downloading fast5s and basecalling is done on a GPU instance and 
   training / inference is done on a large CPU instance.
-  
-[comment]: <> (TODO ENA download script)
 
 1) Start a g4dn.xlarge instance on AWS with the ubuntu18.08 image and 1000GB of storage
-2) Download fast5 data from European Nucleotide Archive (ENA) under accession number PRJEB48183 into `/home/ubuntu/fast5/`
+2) Download fast5 data from European Nucleotide Archive (ENA) under accession number PRJEB48183 into `/home/ubuntu/fast5/`. 
+   1) Option 1: download files from from `fast5_paths.txt`.
+       * `cat fast5_paths.txt | xargs -I{} wget {} -P /home/ubuntu/fast5/`
+   2) Option 2: download files from ENA directly. ENA creates a zip file called `ena_files.zip`. Unizp the archive and then move all tar.gz files to `/home/ubuntu/fast5/`
+        * `ls | xargs -I{} ls {} | xargs -I{} mv {} /home/ubuntu/fast5/`
+   
 3) ```
    sudo apt-get install git
    git clone https://github.com/adbailey4/yeast_rrna_modification_detection

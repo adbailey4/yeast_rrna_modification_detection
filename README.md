@@ -1,8 +1,6 @@
 # Single Molecule Modification Tracking of Saccharomyces Cerevisiae 18S and 25S Ribosomal RNA using Nanopore Sequencing
 
 [comment]: <> (TODO link biorxiv paper)
-[comment]: <> (TODO link data when public)
-[comment]: <> (TODO make docker image for inference step)
 
 This is the top level directory for the pipelines, scripts, and environment setup for anyone who wants to
 replicate or reproduce the results from our paper, Single-molecule modification profiling of Saccharomyces cerevisiae ribosomal RNA reveals subsets of alternatively modified ribosomes.
@@ -10,11 +8,11 @@ replicate or reproduce the results from our paper, Single-molecule modification 
 ### Data Availablility
 
 * Fast5
-  * Fast5s can be found at the European Nucleotide Archive (ENA) under accession number PRJEB48183
+  * Fast5s can be found at the European Nucleotide Archive (ENA) under accession number [PRJEB48183](https://www.ebi.ac.uk/ena/browser/view/PRJEB48183?show=reads)
   * Fast5s are organized into tar.gz files with the following directory structure
 
 ```
-fast5
+fast5.tar.gz
 └───date_chemistry_name
     └───date_id_instrumentID_flowcellID_runIDfast5
         │    summary_file1
@@ -27,11 +25,47 @@ fast5
 ```
 
 * Fastq
-  * Fastqs can be found at the Gene Expression Omnibus (GEO) under accession number GSE186634
+  * Fastqs can be found at the Gene Expression Omnibus (GEO) under accession number [GSE186634](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE186634)
   
 * Modification calls
-  * Modification calls can be found at the Gene Expression Omnibus (GEO) under accession number GSE186634
-  
+  * Modification calls can be found at the Gene Expression Omnibus (GEO) under accession number [GSE186634](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE186634)
+
+### Docker 
+We have docerized the inference pipeline so that it is easy for users to analyze new yeast rRNA direct nanopore sequecining datasets.
+
+[comment]: <> (TODO make docker image for inference step)
+
+## Replicate Results
+
+### Directory Configuration
+* We have several experiments and maintained a consistant directory structure and naming convention with our Fast5 files in order to make it easier 
+to process several expeirments with one script. The `/home/ubuntu/fast5` directory can have multiple experiments within it and has the following directory structure. 
+```
+/home/ubuntu/fast5
+└───date_chemistry_name
+    └───date_id_instrumentID_flowcellID_runIDfast5
+        │    summary_file1
+        │    summary_file2
+        │    ...
+        └───fast5
+               ID1.fast5
+               ID2.fast5
+               ...
+```
+As you can see, it is the same structure as the tar fast5 files.
+The `/home/ubuntu/fastq` directory can have multiple experiments within it and has the following directory structure. 
+```
+/home/ubuntu/fastq
+└───date_chemistry_name
+    └───date_id_instrumentID_flowcellID_runIDfast5
+        │    summary_file1
+        │    ...
+        └───fastq
+               fastq
+               ...
+```
+* If you want to download all data, basecall, align, train, and perform inference on all the data go to [end_to_end](end_to_end/end_to_end.md)
+
 ### Basecalling
 
 * Basecalling scripts can be found in [basecalling](basecalling/basecalling.md)
@@ -65,6 +99,3 @@ fast5
 
 * Jupyter notebooks for figures can be found in [notebooks](notebooks/notebooks.md)
 
-## Running Everything End to End 
-
-* If you want to download all data, basecall, align, train, and perform inference on all the data go to [end_to_end](end_to_end/end_to_end.md)

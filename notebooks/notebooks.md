@@ -1,7 +1,9 @@
 # Data analysis and plotting scripts
 Note: You need at least 10GB of disk space to run everything here and all notebooks were ran from this file's current directory.
 
-### Download modification call files from Gene Expression Omnibus (GEO) under accession number GSE186634 into `yeast_rrna_modification_detection/notebooks/modification_calls`
+### Download modification calls 
+* Files can be found on the Gene Expression Omnibus (GEO) under accession number[GSE186634](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE186634). 
+* Place all `csv` files into into `yeast_rrna_modification_detection/notebooks/modification_calls`
 
 
 ### Install read_clustering
@@ -22,7 +24,7 @@ cd read_clustering && pip install .
    * `aws s3 sync s3://bailey-yeast-rrna-data/signalalign_events/ event_clustering`
 2) Untar 
    * `cd event_clustering && tar -xzf 20210619_R941_prp43.tar.gz && rm 20210619_R941_prp43.tar.gz`
-     20210527_R941_Dbp3d_YPD.tar.gz
+   * `tar -xzf 20210527_R941_Dbp3d_YPD.tar.gz && rm 20210527_R941_Dbp3d_YPD.tar.gz`
 
 ### Tombo
 * Note: I do not provide install scripts for the tombo notebook because 

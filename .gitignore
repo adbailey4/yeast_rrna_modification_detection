@@ -4,3 +4,7 @@ notebooks/.ipynb_checkpoints
 notebooks/figures/
 external_experiments/
 __pycache__
+/Docker/run_docker.sh
+/CMakeLists.txt
+/cmake-build-debug-g-compiler/
+/CMakeLists.txt
