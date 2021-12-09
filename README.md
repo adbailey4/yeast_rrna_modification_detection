@@ -39,7 +39,7 @@ Minimal Example:
   * `wget https://sra-download.ncbi.nlm.nih.gov/traces/sra69/SRZ/016584/SRR16584067/20210415_R941_mutant451.fastq.gz`
   * `gunzip 20210415_R941_mutant451.fastq.gz`
 * Mount data directory and run docker
-  * `docker run -it -v "$(pwd)":/data ucscbailey/yeast_rrna:bailey-dev  --fastq /data/20210415_R941_mutant451.fastq --fast5 /data/20210415_R941_mutant451/20210415_0552_MN20528_AGG125_7a2113f4/fast5 --name 20210415_R941_mutant451 --threads 2`
+  * `docker run -it -v "$(pwd)":/data ucscbailey/yeast_rrna:latest  --fastq /data/20210415_R941_mutant451.fastq --fast5 /data/20210415_R941_mutant451/20210415_0552_MN20528_AGG125_7a2113f4/fast5 --name 20210415_R941_mutant451 --threads 2`
 * Single molecule modification profile calls will be in `signalalign_output/variant_calls/20210415_R941_mutant451.csv`
 
 ## Replicate Results
