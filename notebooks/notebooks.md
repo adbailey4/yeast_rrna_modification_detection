@@ -3,6 +3,7 @@ Note: You need at least 10GB of disk space to run everything here and all notebo
 
 ### Download modification calls 
 * Files can be found on the Gene Expression Omnibus (GEO) under accession number[GSE186634](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE186634). 
+  * `wget https://ftp.ncbi.nlm.nih.gov/geo/series/GSE186nnn/GSE186634/suppl/GSE186634_RAW.tar`
 * Place all `csv` files into into `yeast_rrna_modification_detection/notebooks/modification_calls`
 
 

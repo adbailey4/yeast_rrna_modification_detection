@@ -4,9 +4,9 @@ and running inference is CPU intensive. So, downloading fast5s and basecalling i
   training / inference is done on a large CPU instance.
 
 1) Start a g4dn.xlarge instance on AWS with the ubuntu18.08 image and 1000GB of storage
-2) Download fast5 data from European Nucleotide Archive (ENA) under accession number PRJEB48183 into `/home/ubuntu/fast5/`. 
+2) Download fast5 data from European Nucleotide Archive (ENA) under accession number PRJEB48183 into `/home/ubuntu/fast5/`. (~300 GB)
    1) Use IBM's Aspera connect to download files. [Here](https://gist.github.com/adbailey4/237d0ca229f5e3c8033933a50a143348) is a gist I made for easy install.
-      * `cat fast5_paths.txt | xargs -I{} | .aspera/connect/bin/ascp -QT -l 300m -P33001 -i $HOME/.aspera/connect/etc/asperaweb_id_dsa.openssh {} /home/ubuntu/fast5/.`
+      * `cat aspera_fast5_paths.txt | xargs -I{} $HOME/.aspera/connect/bin/ascp -QT -l 300m -P33001 -i $HOME/.aspera/connect/etc/asperaweb_id_dsa.openssh {} /home/ubuntu/fast5/.`
    2) Download files from from `fast5_paths.txt`.
       * `cat fast5_paths.txt | xargs -I{} wget {} -P /home/ubuntu/fast5/`
    3) Download files from ENA directly. ENA creates a zip file called `ena_files.zip`. Unizp the archive and then move all tar.gz files to `/home/ubuntu/fast5/`

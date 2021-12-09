@@ -8,3 +8,4 @@ __pycache__
 /CMakeLists.txt
 /cmake-build-debug-g-compiler/
 /CMakeLists.txt
+end_to_end/fastq_paths.txt
