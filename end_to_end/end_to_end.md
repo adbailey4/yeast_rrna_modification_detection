@@ -22,4 +22,4 @@ and running inference is CPU intensive. So, downloading fast5s and basecalling i
    bash /home/ubuntu/yeast_rrna_modification_detection/basecalling/run_guppy.sh /home/ubuntu/fast5 /home/ubuntu/fastq
    ```
 4) Once Guppy has finished, shutdown the instance, convert to a large CPU compute node (tested on c5.metal)
-5) bash /home/ubuntu/yeast_rrna_modification_detection/end_to_end/run_entire_pipeline.sh
+5) `bash /home/ubuntu/yeast_rrna_modification_detection/end_to_end/run_entire_pipeline.sh`

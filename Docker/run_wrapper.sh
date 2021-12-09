@@ -10,4 +10,4 @@ finish() {
 trap finish EXIT
 
 # Call tool with parameters
-runSignalAlign.py "$@"
+inference_pipeline.py --path_to_bin /root/signalAlign/bin --output_dir /data/ --reference /root/rrna_scripts/yeast_25S_18S.fa "$@"

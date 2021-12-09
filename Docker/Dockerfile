@@ -38,13 +38,15 @@ RUN mkdir /home/signalAlign/build && \
     cp -r /home/signalAlign/build /root/signalAlign && \
     mkdir /root/signalAlign/bin && \
     cp -r /home/signalAlign/bin /root/signalAlign && \
-    cp -r /home/signalAlign/Docker/run_wrapper.sh /root/signalAlign/run_wrapper.sh
+    cp -r /home/signalAlign/Docker/run_wrapper.sh /root/signalAlign/run_wrapper.sh && \
+    rm -rf /home/signalAlign/tests
 
 WORKDIR /home/
 # install minimap2
 RUN git clone -b v2.23 https://github.com/lh3/minimap2 && \
     cd minimap2 && \
-    make
+    make && \
+    cp minimap2 /opt/venv/bin
 
 WORKDIR /home/
 # install rrna-scripts
@@ -67,6 +69,9 @@ RUN git clone -b v1.0.1 https://github.com/nanoporetech/vbz_compression.git && \
     make -j 4 && \
     make install
 
+COPY ./Docker/run_wrapper.sh /home/rrna_scripts
+COPY ./training/reference/yeast_25S_18S.fa /home/rrna_scripts
+
 FROM ubuntu:18.04 as runtime
 RUN apt-get update && \
     apt-get install -y --no-install-recommends python3.7 python3.7-venv libgomp1 libcurl4-openssl-dev samtools hdf5-tools && \
@@ -85,7 +90,7 @@ ENV PATH="$VIRTUAL_ENV/bin:/root/signalAlign/bin:$PATH"
 RUN mkdir /data
 WORKDIR /data
 
-ENTRYPOINT ["sh", "/root/signalAlign/run_wrapper.sh"]
+ENTRYPOINT ["sh", "/root/rrna_scripts/run_wrapper.sh"]
 
 #FROM runtime as test
 #RUN apt-get -qq install -y --no-install-recommends python3-distutils

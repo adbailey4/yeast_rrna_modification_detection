@@ -31,9 +31,16 @@ fast5.tar.gz
   * Modification calls can be found at the Gene Expression Omnibus (GEO) under accession number [GSE186634](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE186634)
 
 ### Docker 
-We have docerized the inference pipeline so that it is easy for users to analyze new yeast rRNA direct nanopore sequecining datasets.
-
-[comment]: <> (TODO make docker image for inference step)
+We have docerized the inference pipeline so that it is easy for users to use our model on new yeast rRNA direct nanopore sequecining datasets.
+Minimal Example:
+* Download and prep data
+  * `$HOME/.aspera/connect/bin/ascp -QT -l 300m -P33001 -i $HOME/.aspera/connect/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:vol1/run/ERR716/ERR7162397/20210415_R941_mutant451.tar.gz .`
+  * `tar -xzf 20210415_R941_mutant451.tar.gz`
+  * `wget https://sra-download.ncbi.nlm.nih.gov/traces/sra69/SRZ/016584/SRR16584067/20210415_R941_mutant451.fastq.gz`
+  * `gunzip 20210415_R941_mutant451.fastq.gz`
+* Mount data directory and run docker
+  * `docker run -it -v "$(pwd)":/data ucscbailey/yeast_rrna:bailey-dev  --fastq /data/20210415_R941_mutant451.fastq --fast5 /data/20210415_R941_mutant451/20210415_0552_MN20528_AGG125_7a2113f4/fast5 --name 20210415_R941_mutant451 --threads 2`
+* Single molecule modification profile calls will be in `signalalign_output/variant_calls/20210415_R941_mutant451.csv`
 
 ## Replicate Results
 
