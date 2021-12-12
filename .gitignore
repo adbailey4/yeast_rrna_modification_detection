@@ -1,7 +1,6 @@
 notebooks/modification_calls
 .idea/
 notebooks/.ipynb_checkpoints
-notebooks/figures/
 external_experiments/
 __pycache__
 /Docker/run_docker.sh
@@ -9,3 +8,8 @@ __pycache__
 /cmake-build-debug-g-compiler/
 /CMakeLists.txt
 end_to_end/fastq_paths.txt
+notebooks/figures/*.png
+notebooks/figures/*.svg
+notebooks/figures/summary_data/
+notebooks/figures/CBF5GLU_cluster_ids.csv
+notebooks/figures/NOP58GLU_cluster_ids.csv
