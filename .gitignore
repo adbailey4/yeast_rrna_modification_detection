@@ -13,3 +13,5 @@ notebooks/figures/*.svg
 notebooks/figures/summary_data/
 notebooks/figures/CBF5GLU_cluster_ids.csv
 notebooks/figures/NOP58GLU_cluster_ids.csv
+Docker/test/
+end_to_end/prep_fastqs.py

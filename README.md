@@ -58,7 +58,7 @@ optional arguments:
   --seq_summary SEQ_SUMMARY
                         Path to sequence summary file
   --name NAME           Name of experiment
-  
+  --embed               Run MEA during signalAlign and embed into fast5s
 ```
 * The source of inference pipeline script can be found [here](https://github.com/adbailey4/rrna_scripts/blob/v1.0.0/src/rrna_analysis/scripts/inference_pipeline.py).
 

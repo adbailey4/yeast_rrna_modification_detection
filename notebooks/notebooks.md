@@ -44,12 +44,22 @@ cd read_clustering && pip install .
 
 
 ### Event Clustering
-1) Download and untar signalaligned output files for wild type and prp43 
-   * `aws s3 sync s3://bailey-yeast-rrna-data/signalalign_events/ event_clustering`
-2) Untar 
-   * `cd event_clustering && tar -xzf 20210619_R941_prp43.tar.gz && rm 20210619_R941_prp43.tar.gz`
-   * `tar -xzf 20210527_R941_Dbp3d_YPD.tar.gz && rm 20210527_R941_Dbp3d_YPD.tar.gz`
+The event clustering scripts require the additional argument `--embed` when running `inference_pipeline.py`. The split
+fast5s will be embedded with the maximum expected accuracy (MEA) alignment path through the event to kmer alignment
+probabilities. This alignment is what we use to define which events align to which reference position. MEA embedded fast5's 
+are expected to be found by the notebook in the following paths.  
+```
+wt_path = "data/event_clustering/wt_embed"
+dbp3_path = "data/event_clustering/dbp3_embed"
+prp43_path = "data/event_clustering/prp43_embed"
+pxr1_path = "data/event_clustering/pxr1_embed"
+ivt_path = "data/event_clustering/ivt_embed"
+cbf5glu_path = "data/event_clustering/cbf5glu_embed"
+nop58glu_path = "data/event_clustering/nop58glu_embed"
+```
 
+However, this is not a pipeline notebook and is primarily used for data exploration. It is expected for a user to make 
+their own edits so one can know exactly what they are looking at. 
 
     
 ### Tombo
