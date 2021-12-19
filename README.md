@@ -1,9 +1,7 @@
-# Single-molecule modification profiling of ribosomal RNA reveals concerted modification at functional locations in the ribosome
-
-[comment]: <> (TODO link biorxiv paper)
+# Concerted modification of nucleotides at functional centers of the ribosome revealed by single-molecule RNA modification profiling
 
 This is the top level directory for the pipelines, scripts, and environment setup for anyone who wants to
-replicate or reproduce the results from our paper.
+replicate or reproduce the results from our [paper](https://www.biorxiv.org/content/10.1101/2021.12.16.472988v1).
 
 ## Using our Pipeline
 
@@ -136,7 +134,7 @@ all the data go to [end_to_end](end_to_end/end_to_end.md)
 
 ### Inference Pipeline
 
-* There is a script that runs the pipeline on all experiments.
+* There is a script that runs the inference pipeline on all experiments.
   * `bash yeast_rrna_modification_detection/inference.sh path_to_fast5s path_to_fastqs output_dir path_to_bin reference threads`
   
 ### QC Sequencing Runs
