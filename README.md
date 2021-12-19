@@ -3,6 +3,11 @@
 This is the top level directory for the pipelines, scripts, and environment setup for anyone who wants to
 replicate or reproduce the results from our [paper](https://www.biorxiv.org/content/10.1101/2021.12.16.472988v1).
 
+Note: If you have issues with data access, software install or reproducing results for this paper specifically,
+please create an issue on github and include all relevant information and error codes. If you are interested in extending
+this framework to anything other than yeast rRNA, please head to [signalAlign](https://github.com/UCSC-nanopore-cgl/signalAlign) and 
+create an issue there.
+
 ## Using our Pipeline
 
 ### Docker 
