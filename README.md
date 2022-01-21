@@ -4,22 +4,27 @@ This is the top level directory for the pipelines, scripts, and environment setu
 replicate or reproduce the results from our [paper](https://www.biorxiv.org/content/10.1101/2021.12.16.472988v1).
 
 Note: If you have issues with data access, software install or reproducing results for this paper specifically,
-please create an issue on github and include all relevant information and error codes. If you are interested in extending
+please create an issue on GitHub and include all relevant information and error codes. If you are interested in extending
 this framework to anything other than yeast rRNA, please head to [signalAlign](https://github.com/UCSC-nanopore-cgl/signalAlign) and 
 create an issue there.
 
 ## Using our Pipeline
 
 ### Docker 
-The install process for our pipeline is extensive and fragile. We highly recommend using the Dockerized the inference 
+The installation process for our pipeline is extensive and fragile. We highly recommend using the Dockerized the inference 
 pipeline. It is the easiest way to use our model on new yeast rRNA direct nanopore sequencing datasets.  
 
 #### Minimal Example:
 * Download and prep data
-  * `$HOME/.aspera/connect/bin/ascp -QT -l 300m -P33001 -i $HOME/.aspera/connect/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:vol1/run/ERR716/ERR7162397/20210415_R941_mutant451.tar.gz .`
-  * `tar -xzf 20210415_R941_mutant451.tar.gz`
-  * `wget https://sra-download.ncbi.nlm.nih.gov/traces/sra69/SRZ/016584/SRR16584067/20210415_R941_mutant451.fastq.gz`
-  * `gunzip 20210415_R941_mutant451.fastq.gz`
+  * Aspera connect is faster than wget. [Here](https://gist.github.com/adbailey4/237d0ca229f5e3c8033933a50a143348) is a gist I made for easy installation.
+    * `$HOME/.aspera/connect/bin/ascp -QT -l 300m -P33001 -i $HOME/.aspera/connect/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:vol1/run/ERR716/ERR7162397/20210415_R941_mutant451.tar.gz .`
+    * `$HOME/.aspera/connect/bin/ascp -QT -l 300m -P33001 -i $HOME/.aspera/connect/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:vol1/run/ERR777/ERR7776754/20210415_R941_mutant451.fastq.gz .`
+  * Or use wget
+    * `wget ftp.sra.ebi.ac.uk/vol1/run/ERR777/ERR7776754/20210415_R941_mutant451.fastq.gz`
+    * `wget ftp.sra.ebi.ac.uk/vol1/run/ERR716/ERR7162397/20210415_R941_mutant451.tar.gz`
+  * Extract data
+    * `tar -xzf 20210415_R941_mutant451.tar.gz`
+    * `gunzip 20210415_R941_mutant451.fastq.gz`
 * Mount data directory and run docker
   * `docker run -it -v "$(pwd)":/data ucscbailey/yeast_rrna:latest  --fastq /data/20210415_R941_mutant451.fastq --fast5 /data/20210415_R941_mutant451/20210415_0552_MN20528_AGG125_7a2113f4/fast5 --name 20210415_R941_mutant451 --threads 2`
 * Single molecule modification profile calls will be in `signalalign_output/variant_calls/20210415_R941_mutant451.csv`
@@ -37,7 +42,7 @@ bash yeast_rrna_modification_detection/ubuntu18_setup.sh
 
 #### Inference pipeline
 
-* If the install was performed correctly you should have `inference_pipeline.py` in your path.
+* If the installation was performed correctly you should have `inference_pipeline.py` in your path.
 ```
 usage: inference_pipeline.py [-h] --fastq FASTQ [--fast5 FAST5] --reference
                              REFERENCE --path_to_bin PATH_TO_BIN
@@ -67,7 +72,7 @@ optional arguments:
 
 
 
-## Data Availablility
+## Data Availability
 
 * Fast5
   * Fast5s can be found at the European Nucleotide Archive (ENA) under accession number [PRJEB48183](https://www.ebi.ac.uk/ena/browser/view/PRJEB48183?show=reads)

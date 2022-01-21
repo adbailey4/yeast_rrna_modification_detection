@@ -46,7 +46,7 @@ cd read_clustering && pip install .
 ### Event Clustering
 The event clustering scripts require the additional argument `--embed` when running `inference_pipeline.py`. The split
 fast5s will be embedded with the maximum expected accuracy (MEA) alignment path through the event to kmer alignment
-probabilities. This alignment is what we use to define which events align to which reference position. MEA embedded fast5's 
+probabilities. This alignment is what we used to define which events align to which reference position. MEA embedded fast5's 
 are expected to be found by the notebook in the following paths.  
 ```
 wt_path = "data/event_clustering/wt_embed"
