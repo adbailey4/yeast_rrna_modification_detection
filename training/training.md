@@ -28,7 +28,7 @@ You also need to align fastqs to reference and filter alignment files. Note: thi
     "readdb": "/home/ubuntu/fastq/10142019_R941_IVT/20191014_1845_MN20528_FAL23261_9a8cb226/20191014_1845_MN20528_FAL23261_9a8cb226.training.readdb",
     "alignment_file": "/home/ubuntu/fastq/10142019_R941_IVT/20191014_1845_MN20528_FAL23261_9a8cb226/20191014_1845_MN20528_FAL23261_9a8cb226.2308.sorted.bam",
     ```
-  * Finally you need to put the path to signalAlign's bin, the base model, output dir, job count (n threads), and the ambig model.
+  * Finally, you need to put the path to signalAlign's bin, the base model, output dir, job count (n threads), and the ambig model.
     ```
     "path_to_bin": "/home/ubuntu/src/signalAlign/bin",
     "template_hmm_model": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/rna_r94_5mer_ACGTabc.model",
@@ -36,5 +36,5 @@ You also need to align fastqs to reference and filter alignment files. Note: thi
     "ambig_model": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/small_variants.model",
     "job_count": 8
     ```
-* Once your config file is setup, run the following command.
+* Once your config file is set up, run the following command.
   * `trainModels.py run --config /home/ubuntu/yeast_rrna_modification_detection/training/train_ivt_native.config.json`
