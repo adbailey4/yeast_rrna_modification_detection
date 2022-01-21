@@ -7,11 +7,9 @@ __pycache__
 /CMakeLists.txt
 /cmake-build-debug-g-compiler/
 /CMakeLists.txt
-end_to_end/fastq_paths.txt
 notebooks/figures/*.png
 notebooks/figures/*.svg
 notebooks/figures/summary_data/
 notebooks/figures/CBF5GLU_cluster_ids.csv
 notebooks/figures/NOP58GLU_cluster_ids.csv
 Docker/test/
-end_to_end/prep_fastqs.py
