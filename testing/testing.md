@@ -19,7 +19,7 @@ Once we trained the model on some WT and IVT reads we tested our model's accurac
       "readdb": "/home/ubuntu/fastq/20191014_R941_IVT/20191014_1845_MN20528_FAL23261_9a8cb226/20191014_1845_MN20528_FAL23261_9a8cb226.inference.readdb",
       "alignment_file": "/home/ubuntu/fastq/20191014_R941_IVT/20191014_1845_MN20528_FAL23261_9a8cb226/20191014_1845_MN20528_FAL23261_9a8cb226.2308.sorted.bam",
       ```
-    * Finally you need to put the path to signalAlign's bin, the base model, output dir, job count (n threads), and the ambig model.
+    * Finally, you need to put the path to signalAlign's bin, the base model, output dir, job count (n threads), and the ambig model.
       ```
       "path_to_bin": "/home/ubuntu/src/signalAlign/bin",
       "template_hmm_model": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/rna_r94_5mer_ACGTabc.model",
