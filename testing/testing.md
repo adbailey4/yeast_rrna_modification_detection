@@ -22,7 +22,7 @@ Once we trained the model on some WT and IVT reads we tested our model's accurac
     * Finally, you need to put the path to signalAlign's bin, the base model, output dir, job count (n threads), and the ambig model.
       ```
       "path_to_bin": "/home/ubuntu/src/signalAlign/bin",
-      "template_hmm_model": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/rna_r94_5mer_ACGTabc.model",
+      "template_hmm_model": "/home/ubuntu/yeast_rrna_modification_detection/testing/yeast_rrna_ivt_wt_trained_071521.model",
       "output_dir": "/home/ubuntu/training/ivt_vs_wt",
       "ambig_model": "/home/ubuntu/yeast_rrna_modification_detection/training/small_5mer/small_variants.model",
       "job_count": 8
