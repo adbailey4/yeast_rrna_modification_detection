@@ -70,7 +70,7 @@ cd .. && git clone -b v2.23 https://github.com/lh3/minimap2
 cd minimap2 && make
 
 # install rrna-scripts
-cd .. && git clone -b v1.0.0 https://github.com/adbailey4/rrna_scripts
+cd .. && git clone -b v2.0.1 https://github.com/adbailey4/rrna_scripts
 cd rrna_scripts && python3.7 -m pip install .
 
 # install ont-fast5-api

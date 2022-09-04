@@ -50,7 +50,7 @@ RUN git clone -b v2.23 https://github.com/lh3/minimap2 && \
 
 WORKDIR /home/
 # install rrna-scripts
-RUN git clone -b v1.0.1 https://github.com/adbailey4/rrna_scripts && \
+RUN git clone -b v2.0.1 https://github.com/adbailey4/rrna_scripts && \
     cd rrna_scripts && \
     python3.7 -m pip install .
 
