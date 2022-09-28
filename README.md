@@ -128,19 +128,19 @@ fastq
                ...
 ```
 * If you want to download all data, basecall, align, train, and perform inference on
-all the data go to [end_to_end](end_to_end/end_to_end.md)
+all the data go to [end_to_end](end_to_end/README.md)
 
 ### Basecalling
 
-* Basecalling scripts can be found in [basecalling](basecalling/basecalling.md)
+* Basecalling scripts can be found in [basecalling](basecalling/README.md)
 
 ### Training routine
 
-* Alignment, indexing and training scripts can be found in [training](training/training.md)
+* Alignment, indexing and training scripts can be found in [training](training/README.md)
 
 ### Testing Pipeline
 
-* Testing scripts can be found in [testing](testing/testing.md)
+* Testing scripts can be found in [testing](testing/README.md)
 
 ### Inference Pipeline
 
@@ -154,5 +154,5 @@ all the data go to [end_to_end](end_to_end/end_to_end.md)
 
 ### Figures
 
-* Jupyter notebooks for figures can be found in [notebooks](notebooks/notebooks.md)
+* Jupyter notebooks for figures can be found in [notebooks](notebooks/README.md)
 
