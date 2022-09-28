@@ -50,7 +50,7 @@ RUN git clone -b v2.23 https://github.com/lh3/minimap2 && \
 
 WORKDIR /home/
 # install rrna-scripts
-RUN git clone -b v2.0.1 https://github.com/adbailey4/rrna_scripts && \
+RUN git clone -b v2.0.3 https://github.com/adbailey4/rrna_scripts && \
     cd rrna_scripts && \
     python3.7 -m pip install .
 
@@ -82,6 +82,7 @@ RUN apt-get update && \
 COPY --from=build /root/signalAlign/ /root/signalAlign/
 COPY --from=build /home/rrna_scripts/ /root/rrna_scripts/
 COPY --from=build /opt/venv /opt/venv
+COPY --from=build /usr/local/hdf5/lib/plugin /usr/local/hdf5/lib/plugin
 
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:/root/signalAlign/bin:$PATH"
